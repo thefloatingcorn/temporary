@@ -40,12 +40,7 @@ def main():
 def connect_sql():
 
     try:
-        conn = pymysql.connect(host='127.0.0.1',
-                             user='root',
-                             passwd='****',
-                             db='NHS_dbo',
-                             port=3306,
-                             charset='utf8')
+        conn = pymysql.connect(read_default_file="sources/my.cnf")
 
     except Exception as e:
         print("Fail to connect database:", e)
